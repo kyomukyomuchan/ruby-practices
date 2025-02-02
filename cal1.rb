@@ -61,3 +61,4 @@ if year.to_i >= 1970 && year.to_i <= 2100
 else 
   puts "範囲外です" 
 end
+
