@@ -6,9 +6,9 @@ require 'date'
 opts = OptionParser.new 
 
 today = Date.today
-genzai_month = Date.today.month
-genzai_year = Date.today.year
-params = ARGV.getopts("", "m:#{genzai_month}", "y:#{genzai_year}")
+current_month = today.month
+current_year = today.year
+params = ARGV.getopts("", "m:#{current_month}", "y:#{current_year}")
 
 month = params["m"].to_i
 year = params["y"].to_i
