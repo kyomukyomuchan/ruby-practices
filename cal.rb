@@ -3,8 +3,6 @@
 require 'optparse'
 require 'date'
 
-opts = OptionParser.new 
-
 today = Date.today
 current_month = today.month
 current_year = today.year
