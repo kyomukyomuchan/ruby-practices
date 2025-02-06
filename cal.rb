@@ -6,7 +6,7 @@ require 'date'
 today = Date.today
 current_month = today.month
 current_year = today.year
-params = ARGV.getopts("", "m:#{current_month}", "y:#{current_year}")
+opts = ARGV.getopts("", "m:#{current_month}", "y:#{current_year}")
 
 month = params["m"].to_i
 year = params["y"].to_i
