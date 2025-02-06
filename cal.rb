@@ -11,8 +11,8 @@ opts = ARGV.getopts("", "m:#{current_month}", "y:#{current_year}")
 month = params["m"].to_i
 year = params["y"].to_i
 
-begining_day = Date.new(year,month,1)
-last_day = Date.new(year,month,-1)
+begining_date = Date.new(year, month, 1)
+last_date = Date.new(year, month, -1)
  
 if year.to_i >= 1970 && year.to_i <= 2100
   month_year = [month.to_s + "月" + year.to_s]
@@ -20,12 +20,12 @@ if year.to_i >= 1970 && year.to_i <= 2100
   result = month_year_s.center(20)
   puts result
 
-  wdays = ["日","月","火","水","木","金","土"] 
+  wdays = ["日", "月", "火", "水", "木", "金", "土"] 
   puts wdays.join(" ")
 
-  carender = (begining_day..last_day).map do |hiniti|
-    if hiniti == begining_day
-      spece = begining_day.wday * 3 
+  carender = (begining_date..last_date).map do |hiniti|
+    if hiniti == begining_date
+      spece = begining_date.wday * 3 
     else 
       spece = 0 
     end
