@@ -8,13 +8,13 @@ current_month = today.month
 current_year = today.year
 opts = ARGV.getopts("", "m:#{current_month}", "y:#{current_year}")
 
-month = params["m"].to_i
-year = params["y"].to_i
+month = opts["m"].to_i
+year = opts["y"].to_i
 
 begining_date = Date.new(year, month, 1)
 last_date = Date.new(year, month, -1)
  
-if year.to_i >= 1970 && year.to_i <= 2100
+if year >= 1970 && year <= 2100
   month_year = [month.to_s + "月" + year.to_s]
   month_year_s = month_year.join("")
   result = month_year_s.center(20)
