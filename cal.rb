@@ -15,7 +15,7 @@ begining_date = Date.new(year, month, 1)
 last_date = Date.new(year, month, -1)
  
 if (1700..2100).cover?(year)
-  month_year = [month.to_s + "月" + year.to_s]
+  month_year = ["#{month}月#{year}"]
   
   month_year.each do |month_and_year|
     puts month_and_year.center(20)
