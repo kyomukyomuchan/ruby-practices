@@ -23,16 +23,16 @@ if (1700..2100).cover?(year)
   wdays = ["日", "月", "火", "水", "木", "金", "土"] 
   puts wdays.join(" ")
   
-  carender = (begining_date..last_date).map do |hiniti|
-    if hiniti == begining_date
+  carender = (begining_date..last_date).map do |days|
+    if days == begining_date
       spece = begining_date.wday * 3 
     else 
       spece = 0 
     end
    
-    day = " " * spece + hiniti.day.to_s.rjust(2)
+    day = " " * spece + days.day.to_s.rjust(2)
    
-    if hiniti.wday == 6 
+    if days.wday == 6 
       day + "\n" 
     else 
       day 
