@@ -25,18 +25,19 @@ if (1700..2100).cover?(year)
   
   carender = (begining_date..last_date).map do |days|
     if days == begining_date
-      spece = begining_date.wday * 3 
+      spece = begining_date.wday * 3
     else 
       spece = 0 
     end
-   
+    
     day = " " * spece + days.day.to_s.rjust(2)
    
     if days.wday == 6 
-      day + "\n" 
+      day + "\n"
     else 
       day 
     end
+
   end
  
   result = [] 
@@ -54,8 +55,10 @@ if (1700..2100).cover?(year)
     
   unless week.empty? 
     result << week
+    result.each do |day_position|
+     puts day_position.join(" ")
+    end
   end
-  puts result.join(' ')  
 else 
   puts "範囲外です" 
 end
