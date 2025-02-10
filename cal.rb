@@ -15,8 +15,7 @@ begining_date = Date.new(year, month, 1)
 last_date = Date.new(year, month, -1)
  
 if (1700..2100).cover?(year)
- puts "      " + month.to_s + "月" + year.to_s
-  
+  puts "      " + month.to_s + "月" + year.to_s
   wdays = ["日", "月", "火", "水", "木", "金", "土"] 
   puts wdays.join(" ")
   
@@ -34,8 +33,7 @@ if (1700..2100).cover?(year)
     else 
       day 
     end
-
-  end
+ end
  
   result = [] 
   week = [] 
@@ -53,7 +51,7 @@ if (1700..2100).cover?(year)
   unless week.empty? 
     result << week
     result.each do |day_position|
-     puts day_position.join(" ")
+      puts day_position.join(" ")
     end
   end
 else 
