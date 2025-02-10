@@ -15,11 +15,8 @@ begining_date = Date.new(year, month, 1)
 last_date = Date.new(year, month, -1)
  
 if (1700..2100).cover?(year)
-  month_year = ["#{month}月#{year}"]
+ puts "      " + month.to_s + "月" + year.to_s
   
-  month_year.each do |month_and_year|
-    puts month_and_year.center(20)
-  end
   wdays = ["日", "月", "火", "水", "木", "金", "土"] 
   puts wdays.join(" ")
   
