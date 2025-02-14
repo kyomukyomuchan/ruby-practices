@@ -18,43 +18,19 @@ if (1700..2100).cover?(year)
   puts "      " + month.to_s + "月" + year.to_s
   wdays = ["日", "月", "火", "水", "木", "金", "土"] 
   puts wdays.join(" ")
-  
-  carender = (begining_date..last_date).map do |date|
+
+  (begining_date..last_date).map do |date|
     if date == begining_date
       spece = begining_date.wday * 3
     else 
       spece = 0 
     end
-    
-    day = " " * spece + date.day.to_s.rjust(2)
-   
-    if date.wday == 6 
-      day + "\n"
-    else 
-      day 
-    end
- end
- 
-  result = [] 
-  week = [] 
- 
-  carender.each do |number|
-    if number.include?("\n") 
-      week << number 
-      result << week 
-      week = [] 
-    else 
-      week << number 
-    end
+    puts " " * spece + date.day.to_s.rjust(2) + "\n" if date.wday == 6
+    print date.day.to_s.rjust(2) + " " unless date.wday == 6    
   end 
-    
-  unless week.empty? 
-    result << week
-    result.each do |day_position|
-      puts day_position.join(" ")
-    end
-  end
 else 
   puts "範囲外です" 
 end
+puts
+
 
