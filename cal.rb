@@ -16,8 +16,9 @@ last_date = Date.new(year, month, -1)
  
 if (1700..2100).cover?(year)
   puts "      #{month}月#{year}"
+  puts ["日", "月", "火", "水", "木", "金", "土"].join(" ")
 
-  (begining_date..last_date).map do |date|
+  (begining_date..last_date).each do |date|
     if date == begining_date
       spece = begining_date.wday * 3
     else 
