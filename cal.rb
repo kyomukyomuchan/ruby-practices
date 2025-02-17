@@ -16,8 +16,6 @@ last_date = Date.new(year, month, -1)
  
 if (1700..2100).cover?(year)
   puts "      #{month}月#{year}"
-  wdays = ["日", "月", "火", "水", "木", "金", "土"] 
-  puts wdays.join(" ")
 
   (begining_date..last_date).map do |date|
     if date == begining_date
