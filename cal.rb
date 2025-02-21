@@ -35,5 +35,3 @@ else
   puts "範囲外です" 
 end
 puts
-
-
