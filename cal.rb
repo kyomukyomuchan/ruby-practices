@@ -18,14 +18,18 @@ if (1700..2100).cover?(year)
   puts "      #{month}月#{year}"
   puts ["日", "月", "火", "水", "木", "金", "土"].join(" ")
 
+  spece = begining_date.wday * 3
+
   (begining_date..last_date).each do |date|
-    if date == begining_date
-      spece = begining_date.wday * 3
-    else 
-      spece = 0 
+    if date == begining_date # 1日だったらスペースを入れる
+       print " " * spece
     end
-    puts " " * spece + date.day.to_s.rjust(2) + "\n" if date.wday == 6
-    print date.day.to_s.rjust(2) + " " unless date.wday == 6    
+    
+    if date.wday == 6
+      puts date.day.to_s.rjust(2) 
+    else
+      print date.day.to_s.rjust(2) + " "
+    end
   end 
 else 
   puts "範囲外です" 
