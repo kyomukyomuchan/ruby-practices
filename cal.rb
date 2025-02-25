@@ -19,12 +19,10 @@ if (1700..2100).cover?(year)
   puts ["日", "月", "火", "水", "木", "金", "土"].join(" ")
 
   spece = begining_date.wday * 3
+  
+  print " " * spece
 
   (begining_date..last_date).each do |date|
-    if date == begining_date # 1日だったらスペースを入れる
-       print " " * spece
-    end
-    
     if date.wday == 6
       puts date.day.to_s.rjust(2) 
     else
